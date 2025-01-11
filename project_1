@@ -13,7 +13,7 @@ users = {
     "mike":"password123",
     "liz":"pass123"
 }
-#zjisti jestli zadané údaje odpovídají někomu z registrovaných
+#vloz username, pokud souhlasi, vloz heslo, kdyz souhlasi pokracuj dal, kdyz nesouhlasi ukonci program
 jmeno = input("username") 
 heslo = input("password")
 if users.get (jmeno) == heslo:
@@ -22,6 +22,7 @@ if users.get (jmeno) == heslo:
 else:
     print("unregistered user, terminating the program.")
     exit()
+
 #text obsahujici 3. texty
 text_1 = '''Situated about 10 miles west of Kemmerer 
 Fossil Butte is a ruggedly impressive
@@ -49,6 +50,8 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 texts = (text_1, text_2, text_3)
+
+#vyber cislo textu, kdyz cislo je spravne pokracuj v analyze, pokud neni nebo je pismeno ukonci program
 text = input("Enter a number btw. 1 and 3 to select:")
 if text.isnumeric() and int(text) in range(1, 4):
     print("We go analyzed")
@@ -57,9 +60,17 @@ else:
     exit()
 print(texts[int(text)-1])
 selected_text = texts[int(text)-1]
+
+#spocitej slova v analyzovanem textu
 words = selected_text.split()
 soucet = len(words)
 print("There are", {soucet}, "words in the selected text.")
+
+#počet slov začínajících velkým písmenem
+#počet slov psaných velkými písmeny
+#počet slov psaných malými písmeny
+#počet čísel (ne cifer),
+#sumu všech čísel (ne cifer) v textu.
 islover_count = 0
 isupper_count = 0
 start_isupper = 0
@@ -81,3 +92,7 @@ print("There are",{isupper_count} ,"uppercase words.")
 print("There are", {islover_count}, "lowercase words")    
 print("There are", {numbers_count}, "numeric strings.")
 print("The sum of all the numbers", {numbers_sum})
+
+#četnost různých délek slov v textu
+word_len = len(word)
+slova[word_len] +1
