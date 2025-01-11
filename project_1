@@ -15,9 +15,9 @@ users = {
 }
 
 #vloz username, pokud souhlasi, vloz heslo, kdyz souhlasi pokracuj dal, kdyz nesouhlasi ukonci program
-jmeno = input("username") 
-heslo = input("password")
-if users.get (jmeno) == heslo:
+name = input("username") 
+password = input("password")
+if users.get (name) == password:
     print("Welcome to the app",
     "We have 3 texts to be analyzed")
 else:
@@ -134,4 +134,4 @@ print(70 * "-")
 #četnost různých délek slov v textu
 
 for word_len in sorted(slova):
-     print(f"{word_len:<3}| {(slova[word_len]* '*'):<18}| {slova[word_len]:<3}")
+     print(f"{word_len:>3}| {(slova[word_len]* '*'):<18}| {slova[word_len]:<3}")
